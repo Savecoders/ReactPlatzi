@@ -1,7 +1,8 @@
 import OrderCard from "../components/OrderCard";
-import products from "../data/products";
+import { useProductsData } from "@/hooks/productsData";
 import "../styles/OrderGrid.css";
 export default function OrderGrid() {
+  const { loading, data: products } = useProductsData();
   return (
     <div className="my-order">
       <div className="my-order-container">

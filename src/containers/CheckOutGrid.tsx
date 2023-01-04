@@ -1,7 +1,10 @@
-import ProducDetail from "../components/ProducDetail";
-import products from "../data/products";
+import ProducDetail from "../components/CheckOutCard";
+import { useProductsData } from "@/hooks/productsData";
 import "../styles/ProductDetailsGrid.css";
+
 export default function ProductDetailsGrid() {
+  const { loading, data } = useProductsData();
+
   return (
     <aside className="product-detail">
       <div className="title-container">
@@ -9,7 +12,7 @@ export default function ProductDetailsGrid() {
         <p className="title">My order</p>
       </div>
 
-      {products.map(({ id, name, image, price }) => (
+      {data.map(({ id, name, image, price }) => (
         <ProducDetail key={id} name={name} image={image} price={price} />
       ))}
 

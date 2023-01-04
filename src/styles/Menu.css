@@ -4,8 +4,12 @@
   width: 100px;
   height: auto;
   border: 1px solid var(--very-light-pink);
+  background-color: #ffff;
   border-radius: 6px;
   padding: 20px 20px 0 20px;
+  position: absolute;
+  top: 60px;
+  right: 50px;
 }
 
 .desktop-menu ul {
