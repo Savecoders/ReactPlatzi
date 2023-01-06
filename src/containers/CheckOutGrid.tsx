@@ -1,5 +1,5 @@
 import ProducDetail from "../components/CheckOutCard";
-import { useProductsData } from "@/hooks/productsData";
+import { useProductsData } from "../hooks/productsData";
 import "../styles/ProductDetailsGrid.css";
 
 export default function ProductDetailsGrid() {

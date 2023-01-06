@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../styles/ProductCard.css";
 import { numberToPrice } from "../utils/numberToPrice";
+import AppContext from "@/context/AppContext";
 
 interface ProductCardProps {
   price: number;
@@ -8,11 +9,16 @@ interface ProductCardProps {
   image: string;
 }
 
-export default function ProductCard({ price, name, image }: ProductCardProps) {
-  const [product, setProduct] = useState([]);
+interface AppContextProps {
+  addToCart: (product: ProductCardProps) => void;
+  card: string[];
+}
 
-  function handleAddToCart() {
-    setProduct([]);
+export default function ProductCard({ price, name, image }: ProductCardProps) {
+  const { addToCart } = useContext(AppContext) as AppContextProps;
+
+  function handleAddToCart(product: ProductCardProps) {
+    addToCart(product);
   }
 
   return (
@@ -23,7 +29,7 @@ export default function ProductCard({ price, name, image }: ProductCardProps) {
           <p>{`${numberToPrice(price)}`}</p>
           <p>{name}</p>
         </div>
-        <figure onClick={handleAddToCart}>
+        <figure onClick={() => handleAddToCart({ price, name, image })}>
           <img src="./icons/bt_add_to_cart.svg" alt="carIcon" />
         </figure>
       </div>

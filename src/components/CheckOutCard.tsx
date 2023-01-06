@@ -1,5 +1,5 @@
 import "../styles/ProductDetailsCard.css";
-import { numberToPrice } from "@/utils/numberToPrice";
+import { numberToPrice } from "../utils/numberToPrice";
 
 interface OrderCardProps {
   price: number;

@@ -1,18 +1,27 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 import "../styles/Login.css";
-
 const Login = () => {
+  // HTMLInputElement es el tipo de dato que retorna el useRef
+  const form = useRef(null);
+  const handleSubmit = () => {
+    // @ts-ignore
+    const formData = new FormData(form.current);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+  };
+
   return (
     <div className="login">
       <div className="form-container">
         <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
-        <form action="/" className="form">
+        <form action="/" className="form" ref={form}>
           <label htmlFor="email" className="label">
             Email address
           </label>
           <input
             type="text"
-            id="email"
+            name="email"
             placeholder="platzi@example.cm"
             className="input input-email"
           />
@@ -21,7 +30,7 @@ const Login = () => {
           </label>
           <input
             type="password"
-            id="password"
+            name="password"
             placeholder="*********"
             className="input input-password"
           />
@@ -32,7 +41,12 @@ const Login = () => {
           />
           <Link to="/changepass">Forgot my password</Link>
         </form>
-        <button className="secondary-button signup-button">Sign up</button>
+        <button
+          onClick={handleSubmit}
+          className="secondary-button signup-button"
+        >
+          Sign up
+        </button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import ProductCard from "../components/ProductCard";
 import "../styles/ProductGrid.css";
-import { useProductsData } from "@/hooks/productsData";
+import { useProductsData } from "../hooks/productsData";
 export default function ProductGrid() {
   const { loading, data: products } = useProductsData();
   return (

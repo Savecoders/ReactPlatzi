@@ -1,5 +1,5 @@
 import OrderCard from "../components/OrderCard";
-import { useProductsData } from "@/hooks/productsData";
+import { useProductsData } from "../hooks/productsData";
 import "../styles/OrderGrid.css";
 export default function OrderGrid() {
   const { loading, data: products } = useProductsData();
