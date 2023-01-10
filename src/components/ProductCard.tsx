@@ -11,7 +11,9 @@ interface ProductCardProps {
 
 interface AppContextProps {
   addToCart: (product: ProductCardProps) => void;
-  card: string[];
+  state: {
+    cart: string[];
+  };
 }
 
 export default function ProductCard({ price, name, image }: ProductCardProps) {

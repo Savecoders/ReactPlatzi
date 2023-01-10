@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../styles/Header.css";
 import Menu from "./Menu";
+import AppContext from "@/context/AppContext";
+import MyOrder from "@/containers/MyOrder";
+interface stateProps {
+  state: {
+    cart: string[];
+  };
+}
+
 const Header = () => {
   const [toogle, setToogle] = useState(false);
+  const [toogleOrders, setToogleOrders] = useState(false);
+  const { state } = useContext(AppContext) as stateProps;
 
   function handleMenu() {
     setToogle(!toogle);
+  }
+
+  function handleOrders() {
+    setToogleOrders(!toogleOrders);
   }
 
   return (
@@ -39,13 +53,14 @@ const Header = () => {
           <li className="navbar-email" onClick={handleMenu}>
             platzi@example.com
           </li>
-          <li className="navbar-shopping-cart">
+          <li className="navbar-shopping-cart" onClick={handleOrders}>
             <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" />
-            <div>2</div>
+            {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
       </div>
       {toogle && <Menu />}
+      {toogleOrders && <MyOrder />}
     </nav>
   );
 };
