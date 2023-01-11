@@ -7,7 +7,13 @@ export default function ProductGrid() {
     <section className="main-container">
       <div className="cards-container">
         {products.map(({ id, name, image, price }) => (
-          <ProductCard key={id} name={name} image={image} price={price} />
+          <ProductCard
+            key={id}
+            id={id}
+            name={name}
+            image={image}
+            price={price}
+          />
         ))}
       </div>
     </section>
