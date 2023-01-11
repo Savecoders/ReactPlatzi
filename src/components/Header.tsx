@@ -4,7 +4,8 @@ import Menu from "./Menu";
 import AppContext from "@/context/AppContext";
 import MyOrder from "@/containers/MyOrder";
 import ShoopingCart from "@/assets/icons/icon_shopping_cart.svg";
-
+import IconMenu from "@/assets/icons/icon_menu.svg";
+import logoYardSale from "@/assets/logos/logo_yard_sale.svg";
 interface stateProps {
   state: {
     cart: string[];
@@ -26,9 +27,9 @@ const Header = () => {
 
   return (
     <nav>
-      <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
+      <img src={IconMenu} alt="menu" className="menu" />
       <div className="navbar-left">
-        <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
+        <img src={logoYardSale} alt="logo" className="logo" />
         <ul>
           <li>
             <a href="/">All</a>
