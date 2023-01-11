@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SendEmail() {
   return (
     <div className="login">
@@ -13,7 +15,7 @@ export default function SendEmail() {
         <button className="primary-button login-button">Login</button>
         <p className="resend">
           <span>Didn't receive the email?</span>
-          <a href="/">Resend</a>
+          <Link to="/">Resend</Link>
         </p>
       </div>
     </div>

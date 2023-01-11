@@ -1,5 +1,6 @@
 import AppContext from "@/context/AppContext";
 import "@/styles/OrderItem.css";
+import iconClose from "@/assets/icons/icon_close.png";
 import { useContext } from "react";
 interface OrderCardProps {
   product: {
@@ -25,7 +26,7 @@ const OrderItem = ({ product }: OrderCardProps) => {
       </figure>
       <p>{name}</p>
       <p>${price}</p>
-      <img src={""} alt="title" onClick={handleRemoveFromCart} />
+      <img src={iconClose} alt="title" onClick={handleRemoveFromCart} />
     </div>
   );
 };

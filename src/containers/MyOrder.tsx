@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import OrderItem from "@/components/OrderItem";
 import "@/styles/MyOrder.css";
-
+import Arrow from "@/assets/icons/flechita.svg";
 interface ProductProps {
   price: number;
   name: string;
@@ -15,7 +15,7 @@ const MyOrder = () => {
   return (
     <aside className="MyOrder">
       <div className="title-container">
-        <img src={"/arrow.png"} alt="arrow" />
+        <img src={Arrow} alt="arrow" />
         <p className="title">My order</p>
       </div>
       <div className="my-order-content">

@@ -3,6 +3,8 @@ import "../styles/Header.css";
 import Menu from "./Menu";
 import AppContext from "@/context/AppContext";
 import MyOrder from "@/containers/MyOrder";
+import ShoopingCart from "@/assets/icons/icon_shopping_cart.svg";
+
 interface stateProps {
   state: {
     cart: string[];
@@ -54,7 +56,7 @@ const Header = () => {
             platzi@example.com
           </li>
           <li className="navbar-shopping-cart" onClick={handleOrders}>
-            <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" />
+            <img src={ShoopingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
